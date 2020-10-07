@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import expenses from "./expenses.json";
+import { Button, Container } from "reactstrap";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    expenses,
+  };
+  calcExpenses = (id) => {
+    const expenses = this.state.expenses.reduce((expense) => expense.id !== id);
+    this.setState({ expenses });
+  };
+  render() {
+    return (
+      <Container className="text-center">
+        <Jumbotron fluid></Jumbotron>
+      </Container>
+    );
+  }
 }
 
 export default App;
