@@ -4,7 +4,9 @@ export const Transaction = ({ transaction }) => {
   const sign = transaction.amount < 0 ? "-" : "+";
   //ternary op to detect if amount is less than 0 its negative/exp, otherwise its pos and an inc
   return (
-    <li className="minus">
+    //going to make the className dynamic
+    //ternary op again, if we have a class of minus, the border will be red, else if its pos the border is green
+    <li className={transaction.amount < 0 ? "minus" : "plus"}>
       {transaction.text}
       <span>
         {sign}${Math.abs(transaction.amount)}
