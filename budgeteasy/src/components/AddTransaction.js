@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 export const AddTransaction = () => {
+  //added a hook for the input of the form, when a value is added it will be updated
   const [text, setText] = useState("");
   const [amount, setAmount] = useState(0);
 
