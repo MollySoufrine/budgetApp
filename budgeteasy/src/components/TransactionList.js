@@ -8,7 +8,9 @@ export const TransactionList = () => {
       <h3>History</h3>
       <ul id="list" className="list">
         {transactions.map((transaction) => (
+          //loop/mapping through transactions because its an array
           <Transaction key={transaction.id} transaction={transaction} />
+          //bringing it in from globalstate/context mapping through, rendering a transaction component for each one and pass in a prop. must have a unique key.
         ))}
       </ul>
     </>

@@ -27,6 +27,7 @@ export const GlobalContext = createContext(initialState);
 //we want our components wrapped in a provider, this makes them children, so we destrcuture and pass in children
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
+  //passing reducer into useReducer, accessing state values and passing it into our provdier
   //using reducer we want state and dispatch
   return (
     <GlobalContext.Provider value={{ transactions: state.transactions }}>
