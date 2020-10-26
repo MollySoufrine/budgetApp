@@ -13,7 +13,7 @@ export const AddTransaction = () => {
           <input
             type="text"
             value={text}
-            onChagne={(e) => setText(e.target.value)}
+            onChange={(e) => setText(e.target.value)}
             id="text"
             placeholder="Enter Text Here"
           />
