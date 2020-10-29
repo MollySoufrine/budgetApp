@@ -12,7 +12,8 @@ export const AddTransaction = () => {
     const newTransaction = {
       id: Math.floor(Math.random() * 1000000000),
       text,
-      amount,
+      amount: +amount,
+      //adding the plus sign to amount should turn it into a number from a string which should solve our toFixed error
     };
     addTransaction(newTransaction);
   };
