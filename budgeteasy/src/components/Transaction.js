@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
+
 //since transaction is a prop here we must pass in a prop to the function, we can destructure and use ({transaction}) or just use props and props.text
 export const Transaction = ({ transaction }) => {
+  const { deleteTransaction } = useContext(GlobalContext);
+
   const sign = transaction.amount < 0 ? "-" : "+";
   //ternary op to detect if amount is less than 0 its negative/exp, otherwise its pos and an inc
   return (
@@ -12,7 +16,12 @@ export const Transaction = ({ transaction }) => {
         {sign}${Math.abs(transaction.amount)}
         {/* this is wrapped in math.abs so that two negative signs do not show up */}
       </span>
-      <button className="delete-btn">x</button>
+      <button
+        onClick={() => deleteTransaction(transaction.id)}
+        className="delete-btn"
+      >
+        x
+      </button>
     </li>
   );
 };
