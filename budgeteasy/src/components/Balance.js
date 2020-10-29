@@ -6,6 +6,7 @@ export const Balance = () => {
   const amounts = transactions.map((transaction) => transaction.amount);
   const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
   //using reduce to calc total/add them together and toFixed to get 2 decimal places
+
   return (
     //got rid of the div and just using a fragment
     <>
