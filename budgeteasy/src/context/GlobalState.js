@@ -40,6 +40,17 @@ export const GlobalProvider = ({ children }) => {
     //dispatching an action with a type and a payload
   }
 
+  //making another action to add a transaction
+  //action to make call to reducer
+  function addTransaction(transaction) {
+    //takes in an id so we know which to delete
+    dispatch({
+      type: "ADD_TRANSACTION",
+      payload: transaction, //data we want to send to it which in this case is the I.D
+    });
+    //dispatching an action with a type and a payload
+  }
+
   return (
     <GlobalContext.Provider
       value={{

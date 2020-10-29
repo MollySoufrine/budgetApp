@@ -10,7 +10,7 @@ export default (state, action) => {
         transactions: state.transactions.filter(
           (transaction) => transaction.id !== action.payload
         ),
-        //return all the transactions excpet the one witht he id that was deleted
+        //return all the transactions excpet the one with the id that was deleted
       };
     default:
       // when default just return state as is
