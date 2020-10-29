@@ -57,6 +57,7 @@ export const GlobalProvider = ({ children }) => {
         transactions: state.transactions,
         //passing deletetranscation down so we can use it
         deleteTransaction,
+        addTransaction,
       }}
     >
       {children}

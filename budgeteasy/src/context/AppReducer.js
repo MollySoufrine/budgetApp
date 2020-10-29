@@ -12,8 +12,17 @@ export default (state, action) => {
         ),
         //return all the transactions excpet the one with the id that was deleted
       };
+    case "ADD_TRANSACTION":
+      return {
+        ...state,
+        transactions: [action.payload, ...state.transactions],
+      };
+    //return transactions that are already there in addtion to the enw one
     default:
       // when default just return state as is
       return state;
   }
 };
+
+//state "hovers" over components which you use to change/send down to your state
+//actions can be used to call to send up

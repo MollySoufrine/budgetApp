@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
 export const IncomeExpenses = () => {
@@ -15,26 +15,18 @@ export const IncomeExpenses = () => {
     -1
   ).toFixed(2);
 
-  const [useIncome, setIncome] = useState(income);
-  const [useExpense, setExpense] = useState(expense);
-
-  useEffect(() => {
-    setExpense(expense);
-    setIncome(income);
-  });
-
   return (
     <div className="inc-exp-container">
       <div>
         <h4>Income</h4>
         <p id="money-plus" className="money plus">
-          ${useIncome}
+          ${income}
         </p>
       </div>
       <div>
         <h4>Expense</h4>
         <p id="money-minus" className="money minus">
-          ${useExpense}
+          ${expense}
         </p>
       </div>
     </div>
